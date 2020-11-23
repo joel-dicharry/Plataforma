@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Passage } from "./Passage";
 
 @Component({
   selector: 'app-passage-list',
@@ -7,13 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PassageListComponent implements OnInit {
 
-  passages = {
-    empresa: "El Rápido",
-    c_origen: "Bolívar",
-    c_destino: "Tandil",
-    fecha: "7 may",
-    horarios: "9:15 - 13:05",
-  };
+  passages: Passage[] = [
+    {
+      empresa: "El Rápido",
+      origen: "Bolívar",
+      destino: "Tandil",
+      fecha: "7 may",
+      horario: "9:15 - 13:05",
+    },
+    {
+      empresa: "Chevallier",
+      origen: "Bolívar",
+      destino: "Buenos Aires",
+      fecha: "7 may",
+      horario: "9:00 - 14:00",
+    },
+  ];
 
   constructor() { }
 

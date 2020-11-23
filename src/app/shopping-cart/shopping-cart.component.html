@@ -9,7 +9,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
+      <tr *ngFor="let cart of carts">
         <td>{{cart.cantidad}}</td>
         <td>{{cart.lugar}}</td>
         <td>{{cart.empresa}}</td>

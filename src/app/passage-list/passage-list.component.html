@@ -9,12 +9,12 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>{{passages.empresa}}</td>
-        <td>{{passages.c_origen}}</td>
-        <td>{{passages.c_destino}}</td>
-        <td>{{passages.fecha}}</td>
-        <td>{{passages.horarios}}</td>
+      <tr *ngFor="let passage of passages">
+        <td>{{passage.empresa}}</td>
+        <td>{{passage.origen}}</td>
+        <td>{{passage.destino}}</td>
+        <td>{{passage.fecha}}</td>
+        <td>{{passage.horario}}</td>
       </tr>
     </tbody>
 </table>
