@@ -7,15 +7,18 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" [routerLink]="['/ticket-office']">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Sobre Nosotros</a>
+          <a class="nav-link" [routerLink]="['/about']">Sobre Nosotros</a>
         </li>
       </ul>
     </div>
   </nav>
 </header>
 
-<app-passage-list ></app-passage-list>
-<app-shopping-cart></app-shopping-cart>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+
+<app-footer></app-footer>

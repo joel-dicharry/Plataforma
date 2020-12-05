@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable} from 'rxjs';
+import { PassageCartService } from '../passage-cart.service';
+import { Passage } from '../passage-list/Passage';
 import { Cart } from './Cart';
 
 @Component({
@@ -8,24 +11,11 @@ import { Cart } from './Cart';
 })
 export class ShoppingCartComponent implements OnInit {
 
-  carts: Cart[] = [
-    {
-      cantidad : 0,
-      lugar : 'lorem ipsum',
-      empresa : 'dolor sit amet',
-      unidad : 0,
-      total : 0,
-    },
-    {
-      cantidad : 0,
-      lugar : 'lorem ipsum',
-      empresa : 'dolor sit amet',
-      unidad : 0,
-      total : 0,
-    },
-  ]
+  cardList$: Observable<Passage[]>;
 
-  constructor() { }
+  constructor(private p: PassageCartService) {
+    this.cardList$ = p.cartList.asObservable();
+  }
 
   ngOnInit(): void {
   }

@@ -1,20 +1,16 @@
-<table class="table col-md-4">
+<table class="table">
     <thead>
       <tr>
         <th scope="col">Cantidad</th>
         <th scope="col">Desde - Hasta</th>
         <th scope="col">Empresa</th>
-        <th scope="col">Precio unidad</th>
-        <th scope="col">Precio total</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let cart of carts">
-        <td>{{cart.cantidad}}</td>
-        <td>{{cart.lugar}}</td>
-        <td>{{cart.empresa}}</td>
-        <td>{{cart.unidad}}</td>
-        <td>{{cart.total}}</td>
+      <tr *ngFor="let c of (cardList$ | async)">
+        <td>{{c.quantity}}</td>
+        <td>{{c.origin}} - {{c.destination}}</td>
+        <td>{{c.company}}</td>
       </tr>
     </tbody>
 </table>
